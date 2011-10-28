@@ -1,0 +1,227 @@
+\documentclass{jqr}
+
+\begin{document}
+
+\pageheader{作者名等：论文题目}%首页后的页眉
+\firstpageheader%首页页眉
+\supported{项目1名称（编号）；项目2名称（编号） 一般只标注省级以上基金项目，请注意核对基金名称}%基金项目，如无基金项目请删除该行
+\dates{通讯作者姓名，电子邮件}{yyyy-mm-dd/yyyy-mm-dd/yyyy-mm-dd}%请填写通讯作者及其联系方式，收稿、录用、修回日期由编辑部填写
+\doi{}%doi号，由编辑部填写
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 中文标题和摘要部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{chinesetitle}
+
+\title{论文题目}
+
+\author{作\quad 者}%两字的名字，中间空一格，加\quad
+\author{作者名}
+
+\address{1.~作者单位，省，市\quad 邮编；\quad 2.~作者单位，省，市\quad 邮编}
+
+\maketitle
+
+%摘要————————
+\begin{abstract}
+一般论文的摘要由研究目的，过程，方法，结论构成，切勿大段的描述研究背景和相关知识，
+关注于您和您的小组所作的工作及其成果，使读者能够不读全文也了解全部的重要内容２００～４００字／。综诉写法除外。一般为4～7词，请谨慎选择与文章相关性高的词，对提高文章的被引用率有很大帮助。□□□□□□□□□□□□□□□□□□□□□□□□□□□□□。
+
+%关键词————————
+\keywords{□□□□；□□□□；□□□□；□□□□}
+\category{TP182}{A}\wzbh{0000-05}%请修改填写中图分类号和文献标识码%文章编号
+\end{abstract}
+
+\end{chinesetitle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 英文标题和摘要部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{englishtitle}
+
+\title{English Title}
+
+\author{Familyname Firstname Middlename $^{1, 2}$} %作者名
+\author{Xing Ming$^{1}$}
+\author{Xing Ming-zi$^{1}$}
+
+\address{1.~\textit{Full name of the Institute where you do research}, \textit{City}~~postcode, \textit{Country}; \\
+2.~\textit{Full name of the Institute where you do research}, \textit{City}~~postcode, \textit{Country}}
+
+\maketitle
+
+%摘要——————
+\begin{abstract}
+英文翻译要求实词与中文严格对应。有助于CNKI等数据库的收录，从而提高引用率。□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□.
+□□□□□□□□□□□□□□□□□□□□□□□□□□□□.
+
+%关键词——————
+\keywords{□□□□; □□□□; □□□□; □□□□}
+\end{abstract}
+
+\end{englishtitle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+
+\section{引言（Introduction）}
+
+引文写法：□□□$^{[1]}$□$^{[2\,\mbox{-}\,3]}$□$^{[4\,\mbox{-}\,7]}$□见文[8]□文[9]中□□□□□□□□□□□□□。
+
+引言中切勿单纯罗列前人研究成果，注意阐明其与本文研究的关系，使读者明确立题依据；切勿复制摘要内容，如需要，讲明本文研究的关注点或入手的方向即可；我刊论文一般较短（无页数限制，仅是区别于毕业论文的70余页），故没有必要在引言中交代文章结构和各段的主要内容。
+
+%全文句号将由编辑部统一替换成全角句号"．"，您写作时，按照习惯，写“。”即可
+
+
+\section{一级标题（Translation of the title） }
+
+\subsection{公式符号国标规范中常用的有}
+%公式——————————————
+\begin{equation}
+\label{eq1} {\bm U} = \big[\,{u_1},~{u_2},\cdots ,{u_m}\,\big]
+\end{equation}%公式————————————————
+其中，矩阵向量${\bm U}$用黑斜体，转置符号${\rm T}$是正体。
+\begin{equation}
+\label{eq2}
+{\bm y}(t)=f(\int\limits_{-\infty}^{+\infty} (\sum\limits_{i=1}^{n} \omega _{i} x_i (\tau )g(t,\tau)){\rm d}\tau -\theta)
+\end{equation}
+其中，${\rm d}\tau$是正体。
+
+上下标中，表示变动的量的用斜体，如式(1)的$u_m$中$m=1,2,...$；表示英文字母缩写的用正体，如期望输出${\bm y}_{\rm d}$中的$\rm d$是desired的首字母。
+
+第一次出现的量，需要在文中对其进行解释或者注明引文出处。
+
+尽量用一个字符表示一个量，以免运算时和乘法混淆；学科内默认使用的除外。
+
+详细的外文字母批注规则请在网站“投稿模板”栏目下载。
+
+\subsection{插图和表}
+%插图————————————
+\begin{center}\small
+\includegraphics{09-1022-1.eps}\\[3pt]
+图1\quad □□□中文图题□□□\\
+Fig.1 \quad □□英文图题（第一个单词首字母大写）□□
+\end{center}%插图————————————————
+
+□□□□□□□。
+\begin{center}\small%表格————————————————
+表1\quad □□□中文表题□□□\\
+Tab.1\quad  □□英文表题（第一个单词首字母大写）□□\\[3pt]
+\doublerulesep 0.4pt\tabcolsep 15pt
+\begin{tabular}{c|c|c|c}%四列，center对齐
+\hline 项目 & 项目 & 项目 & 项目\\
+\hline 1    & 数值 & 数值 & 数值\\
+\hline 2    & 数值 & 数值 & 数值 \\
+\hline
+\end{tabular}
+\end{center}%表格————————————————————————
+□□□□□□□□□□□
+□□□。
+\section{一级标题（Translation of the title） }
+
+□□□□□□□□□□□□□□。
+
+\subsection{二级标题}
+
+□□□□□□□□□□□□□□□□□□□□□。□□□□□□□□□□□□□□□
+□□□□□□□□□□□□□□。□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□。
+
+\subsection{二级标题}
+
+□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□。
+
+\subsubsection{三级标题}
+
+□□□□□□□
+□□□□□□□□□□□□□□□□□□□□□□□□□□
+□□□。
+
+\subsubsection{三级标题}
+
+□□□□□□□□□□□□□□。
+
+\section{一级标题（Translation of the title） }
+
+结论中切勿单纯复制摘要内容。一般有总结本文研究成果（客观、有数据、有说服力），关注于今后的研究方向，引出讨论。不推荐评价研究成果的学术价值，尤其避免过于夸大的评价，如：为XX学科的后续研究奠定了基础，给XX生产指明了方向）。
+
+如有“致谢”部分，则另段，不需要单独成章。□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□。
+
+
+\begin{References}%参考文献列表
+\bibitem[0]{}
+        \dotfill 按文件类型的写法范例：\dotfill
+
+        书，专著 \dotfill         M
+\bibitem[1]{} 作者. 书名[M]. 出版地: 出版者, 出版年.
+
+\bibitem[1]{} Finkenzeller K. RFID Handbook[M]. New York, USA: Wiley, 2003.
+
+\bibitem[1]{} 胡寿松。自动控制原理[M]。5版。 北京：科学出版社，2007: 471-472 。
+
+Hu Shousong. The Principle of Automatic Control[M]. 5th ed. Beijing:
+Science Press, 2007, 471-472. %中文文献要求有对应的英文翻译，下面的范例从略。
+
+中文文献要求有对应的英文翻译，下面的范例从略。
+
+期刊\dotfill J
+\bibitem[2]{} 作者. 文章题名[J]. 期刊名, 年, 卷(期): 起止页码.
+\bibitem[2]{} Jiang X F, Han Q L. On designing fuzzy controllers for a class of nonlinear networked control systems[J]. IEEE Transactions on Fuzzy Systems, 2008, 16(4): 1050-1060.
+\bibitem[2]{} 王伟，易建强，赵冬斌，等 。基于稳定性分析的一类欠驱动系统的滑模控制器设计[J]。信息与控制，2005，34(2)：232-235。
+
+会议录\dotfill C
+\bibitem[3]{} 作者. 文章题名[C]//会议论文集名。出版地:  出版社, 出版年: 起止页码.
+\bibitem[3]{} Woodley B R, Jones H L II, Le Master E A, et al. Carrier phase GPS and computer vision for control of an autonomous helicopter[C/CD]//Proceedings of the 9th International Technical Meeting of the Satellite Division of the Institute of Navigation. Alexandria, VA, USA: ION, 1996: 461-465.
+\bibitem[3]{} Chen J X, Zang C Z, Liang W, et al. Auction-based dynamic coalition for single target tracking in wireless sensor networks[C]//Proceedings of the 6th World Congress on Intelligent Control and Automation: Vol.1-12 . Piscataway, NJ, USA: IEEE, 2006: 94-98.
+
+论文\dotfill D
+\bibitem[4]{} 作者. 学位论文名称[D]. 出版地, 出版社, 出版年.
+\bibitem[4]{} Birari S M. Mitigating the Reader Collision Problem in RFID Networks with Mobile Readers[D]. Bombay, India: Indian Institute of Technology, 2005.
+\bibitem[4]{} 张华。基于T-S模糊模型的转台伺服控制系统设计研究[D]。哈尔滨：哈尔滨工业大学，2006。
+
+报告\dotfill R
+\bibitem[5]{} 作者. 报告名称[R]. 出版地: 出版者, 出版年.
+\bibitem[5]{} Zhou Z H, Tang W. Selective Ensemble of Decision Trees[R]. Nanjing: Nanjing University, 2003.
+
+专利\dotfill P
+\bibitem[6]{} 专利所有者. 专利题名: 专利国别, 专利号[P]. 公告日期/公开日期. 获取和访问路径.
+\bibitem[6]{} 苏宏业，牟盛静，王长明，等。基于工业软测量模型的离线化验值双重校正方法：中国，1570627[P]．2005-01-26.
+
+联机网络（按载体类型）\dotfill OL
+\bibitem[7]{} 主要责任者. 题名: 其他题目信息[文献类型/载体标志]. 出版地: 出版者, 出版年(更新日期)[引用日期]. 获取访问和访问路径.
+\bibitem[7]{} Olfati-Saber R, Murray R M. Distributed cooperative control of multiple vehicle formations using structural potential functions[C/OL]//Proceeding of the 15th IFAC World Congress. 2008-09-05. http://www.ifac-papersonline.net/Detailed/25875.html.
+
+数据库\dotfill DB
+\bibitem[8]{} The Center for Machine Learning and Intelligent Systems. UC Irvine Machine Learning Repository[DB/OL]. 2007-07-21/2007-10-07. http://archive.ics.uci.edu/ml/datasets.html.
+
+电子公告 \dotfill EB
+\bibitem[9]{} Diorio C. Class 1 generation 2 UHF RFID[EB/OL]. (2004-10-26)/[2007-09-10].
+http://www.iema.org/Class{\_}1{\_}Gen-2{\_}UHF{\_}\linebreak
+RFID{\_}-{\_}EPC{\_}Global.pdf.
+
+
+\dotfill 载体类型（加"/"，写在文献类型后面）：\dotfill
+
+    联机网络------OL
+
+    光盘------CD
+
+\end{References}
+
+\begin{AuthorIntroduction}
+
+\Intro 姓\quad
+名（出生年--），性别，学位，职称。研究领域：□□□□□□□□□□□□，□□□□□□□□□□□□□，□□□□□□□□。
+
+\Intro
+姓名名（出生年--），性别，学位，职称。研究领域：□□□□，□□□□，□□□□。
+
+\end{AuthorIntroduction}
+\hfil
+\end{multicols}
+
+\end{document}
