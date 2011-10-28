@@ -1,0 +1,102 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (X11; U; Linux 2.2.16-22smp i686) [Netscape]">
+   <meta name="Author" content="Dan Ellis <dpwe@ee.columbia.edu>">
+   <meta name="Description" content="Spectral warping of LPC audio models, implemented in Matlab">
+   <meta name="KeyWords" content="matlab, audio, speech, modification, warp">
+   <title>Spectral Warping of LPC resonance models</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" vlink="#551A8B" alink="#0000FF">
+<a href="http://www.ee.columbia.edu/~dpwe/">Dan
+Ellis</a> : <a href="http://www.ee.columbia.edu/~dpwe/resources/">Resources</a>
+: <a href="http://www.ee.columbia.edu/~dpwe/resources/matlab/">Matlab</a>
+:
+<h1>
+Spectral Warping of LPC resonance models
+<hr WIDTH="100%"></h1>
+
+<h4>Introduction</h4>
+<P>
+Standard LPC analysis separates a signal into a smoothed spectral 
+representation - the resonances of a time-varying all-pole filter - 
+and an approximately-white excitation which, when passed through the
+time-varying filter, reproduces the original signal.  This
+decomposition is the basis of all kinds of compression and
+modification techniques.
+</P>
+
+<P>
+One thing we can do is systematically shift the resonant frequencies 
+of the LPC model by applying a warping transformation to the 
+IIR filter (essentially, substituting an all-pole system for 
+each delay element).  The perceptual effect of this, for voice, 
+is to change the 'color' of the speaker's voice, making it darker 
+for a shift down, or brighter for a shift up.  Pitch (which is 
+represented in the excitation) does not change, and intelligibility 
+and naturalness can be quite good.
+</P>
+
+<P>
+The code and example on this page show a simple implementation of
+LPC spectral warping to effect a voice modification.
+</P>
+
+<h4>Code</h4>
+<P>
+The routines provided here are:
+</P>
+<UL>
+     <LI><A HREF="warppoles.m">[B,A] = warppoles(a, alpha)</A> warps
+     the all-pole filter defined by numerator coefficients a using a
+     first-order allpass substitution with parameter alpha to
+     generate a new filter (with poles and zeros) defined by
+     polynomials B and A.  Negative alpha results in shifting poles 
+     up in frequency.</LI>
+     <LI><A HREF="lpcfit.m">[A,G,E] = lpcfit(D,P,H,W,O)</A> fits P-th order 
+LPC (all-pole, autoregressive) models to sound waveform D, using 
+W-point windows advanced by H samples.  Rows of A contain 
+all-pole filter coefficiets [1 a1 a2 .. aP], with corresponding 
+elements of G giving the frame  gain (residual RMS).  E is the actual 
+excitation residual.  Specifying OV as zero prevents overlap-add of the 
+residual, for perfect reconstruction but a less useful E. 
+(Same function as on the <A HREF="../sws/">SWS page</A>)</LI>
+  <LI><A HREF="lpcsynth.m">D = lpcsynth(A,G,E,H,OV)</A> resynthesizes 
+from LPC parameters returned by lpcfit, or using noise excitation if 
+E is omitted.</LI>
+</UL>
+
+<h4>Example</h4>
+<P>
+An example use is shown below:
+</P>
+<TT><PRE>
+>> <FONT COLOR="#FF0000">% Load a speech waveform</FONT>
+>> [d,sr] = wavread('<A HREF="sm1_cln.wav">sm1_cln.wav</A>');
+>> 
+>> <FONT COLOR="#FF0000">% Fit the original LPC model (high-order)</FONT>
+>> [a,g,e] = lpcfit(d,20);
+>> 
+>> <FONT COLOR="#FF0000">% Warp the poles up a little</FONT>
+>> <FONT COLOR="#FF0000">% (warppoles modifies every frame - rows of a - at the same time)</FONT>
+>> alpha = -0.2;
+>> [bhat, ahat]  = warppoles(a, alpha);
+>>
+>> <FONT COLOR="#FF0000">% Resynthesize with the new LPC</FONT>
+>> <FONT COLOR="#FF0000">% (fortunately, bhat is the same for all frames)</FONT>
+>> dw = filter(bhat(1,:), 1, lpcsynth(ahat, g, e));
+>> 
+>> <FONT COLOR="#FF0000">% Listen to the original...</FONT>
+>> <A HREF="sm1_cln.wav">soundsc(d,sr)</A>;
+>> <FONT COLOR="#FF0000">% ... and compare warped version</FONT>
+>> <A HREF="sm1_cln_anp2.wav">soundsc(dw, sr)</A>;
+</PRE></TT>
+<hr ALIGN=LEFT>
+<address>
+Last updated: $Date: 2004/07/12 17:30:39 $</address>
+
+<br><a href="http://www.ee.columbia.edu/~dpwe/">Dan Ellis</a> &lt;<a href="mailto:dpwe@ee.columbia.edu">dpwe@ee.columbia.edu</a>>
+<br>&nbsp;
+</body>
+</html>
